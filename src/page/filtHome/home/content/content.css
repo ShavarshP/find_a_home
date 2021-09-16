@@ -1,8 +1,13 @@
+.description_contener {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+}
+
 .conect-contener {
-  width: 36%;
+  width: 500px;
   height: auto;
-  background-color: #EAE2B6;
-  margin-right: 40px;
+  background-color: #eae2b6;
   border-radius: 2px;
   display: flex;
   flex-direction: column;
@@ -26,8 +31,7 @@
 }
 .description-contener {
   width: 99%;
-  position: relative;
-  top: 10%;
-  background-color: #F9F9F9;
+  margin-top: 50px;
+  background-color: #f9f9f9;
   border-style: ridge;
 }

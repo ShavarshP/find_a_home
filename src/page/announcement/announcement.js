@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./announcement.css";
 import Header from "../filtHome/header/header";
 import Step1 from "./step1";

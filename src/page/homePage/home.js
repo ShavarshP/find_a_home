@@ -16,9 +16,12 @@ const Home = (props) => {
 
   const getData = async () => {
     try {
-      const data = await request("/api/houses");
+      const data = await request(
+        "https://still-reef-22878.herokuapp.com/api/houses"
+      );
       // setIsLoaded(true);
       setData(data);
+      console.log(data);
     } catch (e) {
       // setIsLoaded(true);
     }

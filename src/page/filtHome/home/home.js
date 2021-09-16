@@ -17,7 +17,9 @@ const Home = (props) => {
 
   const getData = async () => {
     try {
-      const data = await request("/api/myhome/" + id);
+      const data = await request(
+        "https://still-reef-22878.herokuapp.com/api/myhome/" + id
+      );
       // setIsLoaded(true);
       setData(data);
     } catch (e) {
@@ -33,9 +35,9 @@ const Home = (props) => {
     <div>
       {mydata ? (
         <div>
-          <div className="content-home">
-            <Slide img={mydata[0].img} /> <Content state={mydata[0]} />
-          </div>
+          <div className="content-home"></div>
+          <Slide img={mydata[0].img} />
+          <Content state={mydata[0]} />
           <Block />
           <Phone phone={mydata[0].Mobile_number} />
         </div>

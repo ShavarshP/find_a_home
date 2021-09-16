@@ -6,8 +6,8 @@ const Slide = (prop) => {
 
   const doSlide = () => {
     setboxLeft((index) => {
-      if (index + 600 !== prop.img.length * 600) {
-        return index + 600;
+      if (index + 900 !== prop.img.length * 600) {
+        return index + 900;
       } else {
         return 0;
       }
@@ -15,7 +15,7 @@ const Slide = (prop) => {
   };
   const turnSlide = (index2) => {
     setboxLeft((index) => {
-      return index2 * 600;
+      return index2 * 900;
     });
   };
   return (
@@ -23,13 +23,15 @@ const Slide = (prop) => {
       <div className="slid-div-contener">
         <div
           className="slid-div"
-          style={{ right: boxLeft + "px", width: prop.img.length * 600 + "px" }}
+          style={{ right: boxLeft + "px", width: prop.img.length * 900 + "px" }}
           onClick={() => {
             doSlide();
           }}
         >
           {prop.img.map((imgs, index) => (
-            <img className="imgSlid" key={index} src={imgs} alt="" />
+            <div className="imgSlid" key={index}>
+              <img className="imgSlid_img" src={imgs} alt="" />
+            </div>
           ))}
         </div>
       </div>

@@ -19,9 +19,14 @@ const Step2 = (props) => {
   const confirm = async () => {
     setLoading(<Loading />);
     try {
-      const data = await request("/api/add", "POST", props.state, {
-        "Content-Type": "application/json",
-      });
+      const data = await request(
+        "https://still-reef-22878.herokuapp.com/api/add",
+        "POST",
+        props.state,
+        {
+          "Content-Type": "application/json",
+        }
+      );
       setLoading(<div></div>);
       history.push("/home");
     } catch (e) {
