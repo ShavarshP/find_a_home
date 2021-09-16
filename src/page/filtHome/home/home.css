@@ -1,0 +1,58 @@
+.contener-slid {
+  margin-top: 100px;
+  width: 636px;
+  background-color: #558776;
+  border-style: ridge;
+
+  display: inline-block;
+}
+.slid-div-contener {
+  top: 18px;
+  border-style: ridge;
+  left: 18px;
+  transition: all ease 1s;
+  width: 600px;
+  height: 360px;
+  overflow: hidden;
+  position: relative;
+}
+.slid-div {
+  background-color: #f2fff5;
+  transition: all ease 1s;
+  right: 0;
+  height: 360px;
+  position: relative;
+}
+.imgSlid {
+  width: 600px;
+  height: 360px;
+}
+
+.flex-container-img {
+  border-style: ridge;
+  position: relative;
+  flex-wrap: wrap;
+  text-align: left;
+  height: auto;
+  width: 600px;
+  left: 18px;
+  background-color: #F9F9F9;
+  bottom: 20px;
+}
+.imgSlid-smol {
+  margin-top: 10px;
+  width: 96px;
+  height: 56px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.content-home {
+  margin-top: 2%;
+  display: flex;
+
+  flex-direction: row;
+  align-self: flex-end;
+  justify-content: space-around;
+  position: relative;
+  flex-wrap: wrap;
+}
