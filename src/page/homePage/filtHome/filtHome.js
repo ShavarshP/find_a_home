@@ -22,18 +22,18 @@ const FiltPage = (props) => {
   const getdata = async () => {
     setData(null);
     try {
+      console.log(JSON.stringify(props.state.filt));
       const data = await request(
-        "/api/filtPage/" + id,
+        "https://still-reef-22878.herokuapp.com/api/filt_page/" + id,
         "POST",
         props.state.filt,
         {
           "Content-Type": "application/json",
         }
       );
+      console.log("ss", data);
       setData(data);
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) {}
   };
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const FiltPage = (props) => {
       {mydata ? (
         <div>
           <div className="home home-filterHome">
-            <Search state={state} getdata={getdata} />
+            <Search state={state} getdata={getdata} filterPage={true} />
             <div className="filter-list">
               <List state={state} data={mydata.candidate} />
               <Next data={mydata.count} />

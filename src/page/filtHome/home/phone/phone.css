@@ -1,20 +1,18 @@
 .box-phone {
   width: 400px;
-
-  background: #7F8B52;
+  height: 40px;
+  background: #7f8b52;
   text-align: center;
   line-height: 50px;
   border-radius: 10px;
-  position: absolute;
-  top: -50px;
-  right: -460px;
+  margin-top: 16px;
   transition: opacity 500ms;
   -webkit-transition: opacity 500ms; /* Safari */
   opacity: 0;
   z-index: 12;
 }
 .phone {
-  background: #66DE93;
+  background: #66de93;
   border-radius: 10px;
   font-size: 30px;
   font-family: Verdana;
@@ -24,7 +22,7 @@
   margin-top: 18px;
 }
 .bt-phone {
-  background: #D83A56;
+  background: #d83a56;
   font-family: Verdana;
   cursor: pointer;
   position: absolute;
@@ -36,9 +34,7 @@ button:focus ~ .box-phone {
 button:focus ~ .bt-phone {
   display: block;
 }
-.call-button{
-  position: absolute;
-  top: 700px;
-  margin-bottom: 36px;
-  left: 1%;
+.call-button {
+  margin-top: 20px;
+  margin-left: 26px;
 }

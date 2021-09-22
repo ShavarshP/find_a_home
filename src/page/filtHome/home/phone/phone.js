@@ -3,7 +3,7 @@ import "./phone.css";
 
 const Phone = (props) => {
   return (
-    <div className="call-button" style={{marginRight: "10px"}}>
+    <div className="call-button" style={{ marginRight: "10px" }}>
       <button className="phone">
         <i className="fa fa-phone fa-5" aria-hidden="true"></i>
       </button>

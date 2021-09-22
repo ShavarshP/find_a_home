@@ -18,9 +18,10 @@ const Home = (props) => {
   const getData = async () => {
     try {
       const data = await request(
-        "https://still-reef-22878.herokuapp.com/api/myhome/" + id
+        "https://still-reef-22878.herokuapp.com/api/my_home/" + id
       );
       // setIsLoaded(true);
+      console.log(data);
       setData(data);
     } catch (e) {
       // setIsLoaded(true);
@@ -36,10 +37,9 @@ const Home = (props) => {
       {mydata ? (
         <div>
           <div className="content-home"></div>
-          <Slide img={mydata[0].img} />
-          <Content state={mydata[0]} />
+          <Slide img={mydata.img} />
+          <Content state={mydata} />
           <Block />
-          <Phone phone={mydata[0].Mobile_number} />
         </div>
       ) : (
         <Loading />

@@ -7,8 +7,8 @@ const List = (props) => {
 
   const render = state.map((item, i) => <ListBlok key={i} state={item} />);
   return (
-    <div className={props.state.filtClassName[5]}>
-      <div className={props.state.filtClassName[1]}>{render}</div>
+    <div className="home14-0">
+      <div className="list-filter-container">{render}</div>
     </div>
   );
 };

@@ -5,7 +5,8 @@
 }
 
 .conect-contener {
-  width: 500px;
+  width: 70%;
+  min-width: 500px;
   height: auto;
   background-color: #eae2b6;
   border-radius: 2px;

@@ -11,7 +11,7 @@ const ListBlok = (props) => {
         </NavLink>
       </div>
       <div className="product-list">
-        <h3>{props.state.title}</h3>
+        <h3>{props.state.street}</h3>
 
         <span className="price">$ {props.state.price}</span>
         <div className="actions">

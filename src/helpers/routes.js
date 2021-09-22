@@ -1,12 +1,12 @@
 import React from "react";
-import "./App.css";
+import "../App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Home from "./page/homePage/home";
-import Announcement from "./page/announcement/announcement";
-import Manue from "./page/homePage/manue/manu";
-import HomePage from "./page/filtHome/home/home";
-import FiltPage from "./page/homePage/filtHome/filtHome";
-import About from "./page/about/about";
+import Home from "../page/homePage/home";
+import Announcement from "../page/announcement/announcement";
+import Manue from "../page/homePage/manue/manu";
+import HomePage from "../page/filtHome/home/home";
+import FiltPage from "../page/homePage/filtHome/filtHome";
+import About from "../page/about/about";
 
 export const useRoutes = (props) => {
   return (

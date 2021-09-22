@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
-import { useRoutes } from "./routes";
-
+import { useRoutes } from "./helpers/routes";
 // <Customers />
 const App = (props) => {
   return (
