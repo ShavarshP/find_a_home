@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from "react";
 import Search from "../search/search";
 import List from "../list/list";
 import Footer from "../footer/footer";
-import Loading from "../../../loading/loading";
+import Loading from "../../../components/loading/loading";
 // import { useParams } from "react-router-dom";
 import Header from "../../filtHome/header/header";
 import { useHttp } from "../../../myHooks/hook";

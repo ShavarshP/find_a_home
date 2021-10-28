@@ -5,7 +5,7 @@ import Search from "./search/search";
 import List from "./list/list";
 import Footer from "./footer/footer";
 import { useHttp } from "../../myHooks/hook";
-import MiniLoading from "../../loading/miniLoading";
+import MiniLoading from "../../components/loading/miniLoading";
 
 const Home = (props) => {
   const [state, setState] = useState(props.state);

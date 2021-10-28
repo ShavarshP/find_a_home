@@ -4,7 +4,7 @@ import Slide from "./slideShowe/slide";
 import Content from "./content/content";
 import { useParams } from "react-router-dom";
 import Block from "./ControlBlock/block";
-import Loading from "../../../loading/loading";
+import Loading from "../../../components/loading/loading";
 import Phone from "./phone/phone";
 import { useHttp } from "../../../myHooks/hook";
 

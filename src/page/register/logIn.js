@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Loading from "../../loading/loading";
+import Loading from "../../components/loading/loading";
 import { useHttp } from "../../myHooks/hook";
 
 import FormComponet from "./components/formComponet";

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import Slide from "../filtHome/home/slideShowe/slide";
 import Content from "../filtHome/home/content/content";
 import "./announcement.css";
-import Loading from "../../loading/loading";
+import Loading from "../../components/loading/loading";
 import { NavLink } from "react-router-dom";
 import { useHttp } from "../../myHooks/hook";
 
