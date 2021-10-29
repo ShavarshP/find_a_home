@@ -7,6 +7,7 @@ import Manue from "../page/homePage/manue/manu";
 import HomePage from "../page/filtHome/home/home";
 import FiltPage from "../page/homePage/filtHome/filtHome";
 import About from "../page/about/about";
+import LogIn from "../page/register/logIn";
 
 export const useRoutes = (props) => {
   return (
@@ -26,6 +27,9 @@ export const useRoutes = (props) => {
       </Route>
       <Route path="/about">
         <About state={props.state} />
+      </Route>
+      <Route path="/login">
+        <LogIn/>
       </Route>
       <Redirect from="/" to="/home" />
     </Switch>

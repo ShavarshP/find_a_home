@@ -1,77 +1,57 @@
 import React, { useState } from "react";
-import Loading from "../../components/loading/loading";
-import { useHttp } from "../../myHooks/hook";
+import { useForm } from "react-hook-form";
 
-import FormComponet from "./components/formComponet";
+const LogIn = () => {
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-// const URL = "https://herokuapp.com/api/login/";
-
-const LogIn = ({ verify }) => {
-  const [passwordIsValid, setpasswordIsValid] = useState(true);
-  const [emailIsValid, setemailIsValid] = useState(true);
-  const [loading, setLoading] = useState(false);
-
-  const { request } = useHttp();
-
-  const onSubmit = (data) => {
-    return data.email && data.password && passwordIsValid && emailIsValid
-      ? Valid(data)
-      : noValid();
+  const onSubmit = async () => {
+    const data = await request(
+      "https://still-reef-22878.herokuapp.com/api/login/",
+      "POST",
+      { email: form.email, password: form.password }
+    );
   };
 
-  const Valid = async (data) => {
-    try {
-      setLoading(true);
-      const newData = await request(URL, "POST", {
-        email: data.email,
-        password: data.password,
-      });
-      saveState(newData, "auth");
-      await verify();
-    } catch (error) {}
-    setLoading(false);
+  const onChangeData = (data) => {
+    console.log(data)
+    setForm({
+      email: data.email,
+      password: data.password,
+    });
   };
-
-  const noValid = () => {
-    setpasswordIsValid(false);
-    setemailIsValid(false);
-    alert("invalid");
-    return false;
-  };
-
-  const isValid = (form) => {
-    const email = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    const password = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-
-    setpasswordIsValid(password.test(form.password) || form.password === "");
-    setemailIsValid(email.test(form.email) || form.email === "");
-  };
-
-  const form = (
-    <FormComponet
-      isValid={isValid}
-      valid={{
-        passwordIsValid: passwordIsValid,
-        emailIsValid: emailIsValid,
-      }}
-      onSubmit={onSubmit}
-      type={"Log in"}
-    />
-  );
+  
 
   return (
     <>
-      {loading ? (
-        <div style={{ marginTop: "20%", marginLeft: "24%" }}>
-          <Loading />
-        </div>
-      ) : (
-        <div className="min-h-screen flex  justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-md w-full space-y-8 mt-4 ">
-            <div>{form}</div>
+      <div className="grid">
+        <form onSubmit={handleSubmit(onSubmit)} onChange={handleSubmit(onChangeData)} action="/" method="post" className="form login">
+          <header className="login__header">
+            <h3 className="login__title">Login</h3>
+          </header>
+          <div className="login__body">
+            <div className="form__field">
+              <input type="email" placeholder="Email" required value={form.email}  {...register("email")}/>
+            </div>
+            <div className="form__field">
+              <input type="password" placeholder="Password" required value={form.password} {...register("password")}/>
+            </div>
           </div>
-        </div>
-      )}
+          <footer className="login__footer">
+            <input type="submit" value="Login" />
+            <p><span className="icon icon--info">?</span><a href="#">Forgot Password</a></p>
+          </footer>
+
+        </form>
+
+      </div>
     </>
   );
 };
