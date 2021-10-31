@@ -7,6 +7,7 @@ import Block from "./ControlBlock/block";
 import Loading from "../../../components/loading/loading";
 import Phone from "./phone/phone";
 import { useHttp } from "../../../myHooks/hook";
+import { loadState } from "../../../helpers/localStorage";
 
 const Home = (props) => {
   // const [state, setState] = useState(props.state);
@@ -27,6 +28,21 @@ const Home = (props) => {
       // setIsLoaded(true);
     }
   };
+  const deleteData = async () => {
+    try {
+      const URL = `http://localhost:5000/api/delete/${id}`
+      const token = await loadState("auth");
+      const data = await request(
+        URL,
+        "DELETE",
+        null,
+        {
+          Authorization: `Bearer ${token.token}`,
+        }
+      );
+    } catch (error) { }
+  }
+
 
   useEffect(() => {
     getData();

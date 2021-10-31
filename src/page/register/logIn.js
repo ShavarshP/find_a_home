@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { saveState } from "../../helpers/localStorage";
 import { useHttp } from "../../myHooks/hook";
 
 const LogIn = () => {
@@ -15,11 +16,17 @@ const LogIn = () => {
   } = useForm();
 
   const onSubmit = async () => {
-    const data = await request(
-      "https://still-reef-22878.herokuapp.com/api/login/",
-      "POST",
-      { email: form.email, password: form.password }
-    );
+    try {
+      const data = await request(
+        "http://localhost:5000/api/login/",
+        "POST",
+        { email: form.email, password: form.password }
+      );
+      // console.log(data)
+      saveState(data, "auth");
+    } catch (error) {
+
+    }
   };
 
   const onChangeData = (data) => {
@@ -29,7 +36,7 @@ const LogIn = () => {
       password: data.password,
     });
   };
-  
+
 
   return (
     <>
@@ -40,10 +47,10 @@ const LogIn = () => {
           </header>
           <div className="login__body">
             <div className="form__field">
-              <input type="email" placeholder="Email" required value={form.email}  {...register("email")}/>
+              <input type="email" placeholder="Email" required value={form.email}  {...register("email")} />
             </div>
             <div className="form__field">
-              <input type="password" placeholder="Password" required value={form.password} {...register("password")}/>
+              <input type="password" placeholder="Password" required value={form.password} {...register("password")} />
             </div>
           </div>
           <footer className="login__footer">
