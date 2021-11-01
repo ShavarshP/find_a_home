@@ -1,17 +1,18 @@
 import React, { Component, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./home.css";
 import Slide from "./slideShowe/slide";
 import Content from "./content/content";
 import { useParams } from "react-router-dom";
 import Block from "./ControlBlock/block";
 import Loading from "../../../components/loading/loading";
-import Phone from "./phone/phone";
 import { useHttp } from "../../../myHooks/hook";
 import { loadState } from "../../../helpers/localStorage";
 
 const Home = (props) => {
   // const [state, setState] = useState(props.state);
-  const [mydata, setData] = useState(null);
+  const [myData, setData] = useState(null);
+  const history = useHistory();
   // const [isLoaded, setIsLoaded] = useState(false);
   const { id } = useParams();
   const { request } = useHttp();
@@ -40,7 +41,15 @@ const Home = (props) => {
           Authorization: `Bearer ${token.token}`,
         }
       );
+      history.push("/home");
     } catch (error) { }
+  }
+
+  const check = () => {
+    const promptId = prompt()
+    if (promptId === id) {
+      deleteData()
+    }
   }
 
 
@@ -50,11 +59,11 @@ const Home = (props) => {
 
   return (
     <div>
-      {mydata ? (
+      {myData ? (
         <div>
           <div className="content-home"></div>
-          <Slide img={mydata.img} />
-          <Content state={mydata} />
+          <Slide img={myData.img} />
+          <Content state={myData} check={check} />
           <Block />
         </div>
       ) : (

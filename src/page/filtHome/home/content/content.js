@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./content.css";
 import Map from "../map/map";
 import Phone from "../phone/phone";
+import Delete from "../delete/delete";
+import { loadState } from "../../../../helpers/localStorage";
 const Content = (props) => {
-  console.log(props.state);
   return (
     <div className="description_contener">
       <div className="conect-contener">
@@ -38,6 +39,7 @@ const Content = (props) => {
         </span>
       </div>
       {/* <Block /> */}
+      {loadState("auth") ? <button onClick={props.check}><Delete /> </button> : null}
     </div>
   );
 };
