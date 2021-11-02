@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import PhoneInput from 'react-phone-number-input'
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 const Step1 = (props) => {
+  const [value, setValue] = useState()
   const [state, setState] = useState(props.state.formData);
   let history = useHistory();
   const {
@@ -11,6 +13,7 @@ const Step1 = (props) => {
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     props.state.changedata(data);
     console.log(data);
@@ -102,15 +105,6 @@ const Step1 = (props) => {
         </select>
 
         <input
-          {...register("rooms")}
-          style={{ display: "inline" }}
-          className="margin-box2"
-          id="mailsend"
-          type="number"
-          placeholder="number of rooms"
-          value={state.inline}
-        />
-        <input
           {...register("price")}
           className="margin-box2"
           id="mailsend"
@@ -120,22 +114,35 @@ const Step1 = (props) => {
         />
 
         <input
+          style={{ width: 100 }}
+          {...register("rooms")}
+          className="margin-box2"
+          id="mailsend"
+          type="number"
+          placeholder="number of rooms"
+          value={state.inline}
+        />
+
+        <input
+          style={{ width: 100 }}
           {...register("floor")}
           className="margin-box2"
           id="mailsend"
-          type="text"
+          type="number"
           placeholder="floor"
           value={state.floor}
         />
         <input
+          style={{ width: 100 }}
           {...register("building_floors")}
           className="margin-box2"
           id="mailsend"
-          type="text"
+          type="number"
           placeholder="building floors"
           value={state.building_floors}
         />
         <input
+          style={{ width: 100 }}
           {...register("area")}
           className="margin-box2"
           id="mailsend"
@@ -152,15 +159,19 @@ const Step1 = (props) => {
           placeholder="street"
           value={state.street}
         />
+        <PhoneInput
+          value={state.Mobile_number}
+          {...register("Mobile_number")}
+          onChange={setValue} />
 
-        <input
+        {/* <input
           type="tel"
           className="margin-box2"
           placeholder="Mobile number"
           name="Mobile number"
           {...register("Mobile_number")}
           value={state.Mobile_number}
-        />
+        /> */}
         <textarea
           style={{ width: "250px", height: "300px" }}
           placeholder="description"

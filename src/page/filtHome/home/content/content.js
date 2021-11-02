@@ -32,7 +32,7 @@ const Content = (props) => {
           <div className="conects">{props.state.floor} fl./</div>
         </div>
 
-        <Phone phone={props.state.Mobile_number} />
+        {loadState("auth") ? <Phone phone={props.state.Mobile_number} /> : null}
         <span className="description-contener">
           <p className="conects boconi-tekst">{props.state.description}</p>
           <Map />

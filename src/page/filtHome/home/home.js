@@ -31,7 +31,7 @@ const Home = (props) => {
   };
   const deleteData = async () => {
     try {
-      const URL = `http://localhost:5000/api/delete/${id}`
+      const URL = `https://still-reef-22878.herokuapp.com/api/delete/${id}`
       const token = await loadState("auth");
       const data = await request(
         URL,

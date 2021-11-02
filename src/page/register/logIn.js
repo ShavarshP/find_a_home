@@ -18,12 +18,13 @@ const LogIn = () => {
   const onSubmit = async () => {
     try {
       const data = await request(
-        "http://localhost:5000/api/login/",
+        "https://still-reef-22878.herokuapp.com/api/login/",
         "POST",
         { email: form.email, password: form.password }
       );
       // console.log(data)
       saveState(data, "auth");
+      history.push("/home");
     } catch (error) {
 
     }
