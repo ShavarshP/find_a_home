@@ -15,7 +15,6 @@ const Step2 = (props) => {
   const edit = () => {
     history.push("/add/step1");
   };
-  console.log(JSON.stringify(props.state));
 
   const confirm = async () => {
     setLoading(<Loading />);

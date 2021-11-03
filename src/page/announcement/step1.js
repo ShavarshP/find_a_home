@@ -16,7 +16,6 @@ const Step1 = (props) => {
 
   const onSubmit = (data) => {
     props.state.changedata(data);
-    console.log(data);
     history.push("/add/step2");
   };
 

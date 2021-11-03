@@ -2,24 +2,26 @@ const store = "createStore(reducers);";
 
 export default store;
 
+const filterData = {
+  Mobile_number: "",
+  area: "",
+  building_floors: "",
+  building_type: "",
+  category: "",
+  description: "",
+  district: "",
+  floor: "",
+  price: "",
+  rent: false,
+  rooms: "",
+  sale: false,
+  search_code: "",
+  street: "",
+}
+
 const state = {
   countOfPage: 0,
-  filt: {
-    Mobile_number: "",
-    area: "",
-    building_floors: "",
-    building_type: "",
-    category: "",
-    description: "",
-    district: "",
-    floor: "",
-    price: "",
-    rent: false,
-    rooms: "",
-    sale: false,
-    search_code: "",
-    street: "",
-  },
+  filt: filterData,
   formData: {
     street: "",
     img: [],
@@ -100,6 +102,24 @@ const state = {
     this.filt.search = "flat";
     return this;
   },
+  clineFilter() {
+    this.filt = {
+      Mobile_number: "",
+      area: "",
+      building_floors: "",
+      building_type: "",
+      category: "",
+      description: "",
+      district: "",
+      floor: "",
+      price: "",
+      rent: false,
+      rooms: "",
+      sale: false,
+      search_code: "",
+      street: "",
+    }
+  }
 };
 // localStorage.setItem('filt', state.filt)
 // (localStorage.getItem('filt'))?state.filt=localStorage.getItem('filt') :localStorage.setItem('filt', state.filt)

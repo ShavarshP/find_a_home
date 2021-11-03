@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import "./search.css";
 import Flat from "./flat/flat";
 
@@ -24,6 +24,7 @@ const Search = (props) => {
     setState((prevState) => {
       return [props.state.flat(), 1];
     });
+    props.state.clineFilter()
   };
   const onButtonClickHome = (ref) => {
     classCe();
@@ -32,6 +33,7 @@ const Search = (props) => {
     setState((prevState) => {
       return [props.state.home(), 2];
     });
+    props.state.clineFilter()
   };
   const onButtonClickshop = (ref) => {
     classCe();
@@ -40,6 +42,7 @@ const Search = (props) => {
     setState((prevState) => {
       return [props.state.shop(), 3];
     });
+    props.state.clineFilter()
   };
   const onButtonClickland = (ref) => {
     classCe();
@@ -48,7 +51,12 @@ const Search = (props) => {
     setState((prevState) => {
       return [props.state.land(), 4];
     });
+    props.state.clineFilter()
+
   };
+  const Filter = useMemo(() => {
+    return <Flat state={state[0]} getdata={props.getdata} />
+  }, [props.state.filt])
   return (
     <header className={props.state.filtClassName[4]}>
       <div className={props.state.filtClassName[2]}>
@@ -108,7 +116,7 @@ const Search = (props) => {
             </div>
           </div>
         )}
-        <Flat state={state[0]} getdata={props.getdata} />
+        {Filter}
       </div>
     </header>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import { saveState } from "../../helpers/localStorage";
 import { useHttp } from "../../myHooks/hook";
 
@@ -8,6 +9,7 @@ const LogIn = () => {
     email: "",
     password: "",
   });
+  const history = useHistory();
   const { request } = useHttp();
   const {
     register,
@@ -22,7 +24,6 @@ const LogIn = () => {
         "POST",
         { email: form.email, password: form.password }
       );
-      // console.log(data)
       saveState(data, "auth");
       history.push("/home");
     } catch (error) {
@@ -31,7 +32,6 @@ const LogIn = () => {
   };
 
   const onChangeData = (data) => {
-    console.log(data)
     setForm({
       email: data.email,
       password: data.password,

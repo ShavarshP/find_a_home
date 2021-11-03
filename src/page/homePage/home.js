@@ -21,7 +21,6 @@ const Home = (props) => {
       );
       // setIsLoaded(true);
       setData(data);
-      console.log(data);
     } catch (e) {
       // setIsLoaded(true);
     }

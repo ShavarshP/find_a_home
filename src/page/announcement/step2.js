@@ -26,9 +26,6 @@ const Step2 = (props) => {
       reader.onload = (ev) => {
         const src = ev.target.result;
         myimges = [...myimges, src];
-
-        // console.log(Base64.encodeURI(src));
-        // console.log(src);
         if (index == files.length - 1) {
           setimgContener([...imgContener, ...myimges]);
         }

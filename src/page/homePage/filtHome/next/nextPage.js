@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 
 const FiltPage = (props) => {
   const { id } = useParams();
-  console.log(id);
   const pages = props.data.map((t, i) => {
     if (t === id) {
       return (

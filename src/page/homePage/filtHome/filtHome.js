@@ -22,7 +22,6 @@ const FiltPage = (props) => {
   const getdata = async () => {
     setData(null);
     try {
-      console.log(JSON.stringify(props.state.filt));
       const data = await request(
         "https://still-reef-22878.herokuapp.com/api/filt_page/" + id,
         "POST",
@@ -31,9 +30,8 @@ const FiltPage = (props) => {
           "Content-Type": "application/json",
         }
       );
-      console.log("ss", data);
       setData(data);
-    } catch (e) {}
+    } catch (e) { }
   };
 
   useEffect(() => {
