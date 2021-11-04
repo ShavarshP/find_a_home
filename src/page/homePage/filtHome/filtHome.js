@@ -5,7 +5,7 @@ import Footer from "../footer/footer";
 import Loading from "../../../components/loading/loading";
 // import { useParams } from "react-router-dom";
 import Header from "../../filtHome/header/header";
-import { useHttp } from "../../../myHooks/hook";
+import { useHttp } from "../../../myHooks/http";
 import { useParams } from "react-router-dom";
 import Next from "./next/nextPage";
 

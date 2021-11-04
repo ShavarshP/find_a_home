@@ -6,7 +6,7 @@ import Content from "./content/content";
 import { useParams } from "react-router-dom";
 import Block from "./ControlBlock/block";
 import Loading from "../../../components/loading/loading";
-import { useHttp } from "../../../myHooks/hook";
+import { useHttp } from "../../../myHooks/http";
 import { loadState } from "../../../helpers/localStorage";
 
 const Home = (props) => {
@@ -23,7 +23,6 @@ const Home = (props) => {
         "https://still-reef-22878.herokuapp.com/api/my_home/" + id
       );
       // setIsLoaded(true);
-      console.log(data);
       setData(data);
     } catch (e) {
       // setIsLoaded(true);

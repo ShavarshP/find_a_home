@@ -5,7 +5,7 @@ import Content from "../filtHome/home/content/content";
 import "./announcement.css";
 import Loading from "../../components/loading/loading";
 import { NavLink } from "react-router-dom";
-import { useHttp } from "../../myHooks/hook";
+import { useHttp } from "../../myHooks/http";
 
 const Step2 = (props) => {
   const [loading, setLoading] = useState(<div></div>);

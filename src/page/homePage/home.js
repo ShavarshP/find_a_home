@@ -4,7 +4,7 @@ import Manue from "./manue/manu";
 import Search from "./search/search";
 import List from "./list/list";
 import Footer from "./footer/footer";
-import { useHttp } from "../../myHooks/hook";
+import { useHttp } from "../../myHooks/http";
 import MiniLoading from "../../components/loading/miniLoading";
 
 const Home = (props) => {

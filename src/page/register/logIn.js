@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { saveState } from "../../helpers/localStorage";
-import { useHttp } from "../../myHooks/hook";
+import { useHttp } from "../../myHooks/http";
 
 const LogIn = () => {
   const [form, setForm] = useState({
