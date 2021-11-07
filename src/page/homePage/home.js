@@ -9,7 +9,7 @@ import MiniLoading from "../../components/loading/miniLoading";
 
 const Home = (props) => {
   const [state, setState] = useState(props.state);
-  const [mydata, setData] = useState(null);
+  const [myData, setData] = useState(null);
   // const [isLoaded, setIsLoaded] = useState(false);
   const { request } = useHttp();
   props.state.openHomePage();
@@ -39,7 +39,7 @@ const Home = (props) => {
       <Search state={props.state} />
       <h2 className="home__title">New announcements</h2>
       <hr style={{ border: "1px solid #676662" }} />
-      {mydata ? <List state={state} data={mydata} /> : <MiniLoading />}
+      {myData ? <List state={state} data={myData} /> : <MiniLoading />}
       <Footer />
     </div>
   );

@@ -6,7 +6,7 @@ const Manue = () => {
   const manueHome = useRef();
   const manueAbout = useRef();
   const manueContact = useRef();
-  const changeClaseName = (item) => {
+  const changeClassName = (item) => {
     manueHome.current.className = "navItems";
     manueAbout.current.className = "navItems";
     manueContact.current.className = "navItems";
@@ -27,7 +27,7 @@ const Manue = () => {
               className="navItems navItemActive"
               href="#home"
               ref={manueHome}
-              onClick={() => changeClaseName(manueHome)}
+              onClick={() => changeClassName(manueHome)}
             >
               <span>Home</span>
             </NavLink>
@@ -35,14 +35,14 @@ const Manue = () => {
               to={"/about"}
               className="navItems"
               ref={manueAbout}
-              onClick={() => changeClaseName(manueAbout)}
+              onClick={() => changeClassName(manueAbout)}
             >
               <span>About</span>
             </NavLink>
             <a
               className="navItems"
               ref={manueContact}
-              onClick={() => changeClaseName(manueContact)}
+              onClick={() => changeClassName(manueContact)}
             >
               <span>Contact</span>
             </a>

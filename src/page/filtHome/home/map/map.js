@@ -16,7 +16,7 @@ const Maps = (props) => {
   const map = useRef();
 
   return (
-    <div className="map-contener" ref={map}>
+    <div className="map-container" ref={map}>
       {/* <YMaps>
         <Map defaultState={mapData} width={"100%"} height={"50vh"}>
           {coordinates.map((coordinate, index) => (

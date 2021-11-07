@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./home.css";
-import Slide from "./slideShowe/slide";
+import Slide from "./slideShow/slide";
 import Content from "./content/content";
 import { useParams } from "react-router-dom";
 import Block from "./ControlBlock/block";

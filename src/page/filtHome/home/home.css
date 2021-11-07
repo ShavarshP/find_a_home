@@ -1,11 +1,11 @@
-.contener-slid {
+.container-slid {
   margin-top: 100px;
   width: 936px;
   background-color: #558776;
   border-style: ridge;
   display: inline-block;
 }
-.slid-div-contener {
+.slid-div-container {
   top: 18px;
   border-style: ridge;
   left: 18px;

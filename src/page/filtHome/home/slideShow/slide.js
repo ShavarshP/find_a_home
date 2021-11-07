@@ -19,8 +19,8 @@ const Slide = (prop) => {
     });
   };
   return (
-    <div className="contener-slid">
-      <div className="slid-div-contener">
+    <div className="container-slid">
+      <div className="slid-div-container">
         <div
           className="slid-div"
           style={{ right: boxLeft + "px", width: prop.img.length * 900 + "px" }}

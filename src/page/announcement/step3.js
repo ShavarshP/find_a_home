@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import Slide from "../filtHome/home/slideShowe/slide";
+import Slide from "../filtHome/home/slideShow/slide";
 import Content from "../filtHome/home/content/content";
 import "./announcement.css";
 import Loading from "../../components/loading/loading";

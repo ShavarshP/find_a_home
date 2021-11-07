@@ -12,7 +12,7 @@ import Next from "./next/nextPage";
 const FiltPage = (props) => {
   const [state, setState] = useState(props.state);
   // const [filt, setFilt] = useState(props.state.filt);
-  const [mydata, setData] = useState(null);
+  const [myData, setData] = useState(null);
   // const [isLoaded, setIsLoaded] = useState(false);
   const { request } = useHttp();
   const { id } = useParams();
@@ -44,13 +44,13 @@ const FiltPage = (props) => {
   return (
     <div>
       <Header />
-      {mydata ? (
+      {myData ? (
         <div>
           <div className="home home-filterHome">
             <Search state={state} getdata={getdata} filterPage={true} />
             <div className="filter-list">
-              <List state={state} data={mydata.candidate} />
-              <Next data={mydata.count} />
+              <List state={state} data={myData.candidate} />
+              <Next data={myData.count} />
             </div>
           </div>
           <Footer />

@@ -6,7 +6,7 @@ const Step2 = (props) => {
   let files = [];
   let myimges = [];
   const [preview, setPreview] = useState(<div className="preview"></div>);
-  let [imgContener, setimgContener] = useState([]);
+  let [imgContainer, setimgContainer] = useState([]);
   const input = useRef();
   const triggerInput = () => input.current.click();
   const accept = [".png", ".jpg", ".jpeg", ".gif"];
@@ -27,7 +27,7 @@ const Step2 = (props) => {
         const src = ev.target.result;
         myimges = [...myimges, src];
         if (index == files.length - 1) {
-          setimgContener([...imgContener, ...myimges]);
+          setimgContainer([...imgContainer, ...myimges]);
         }
       };
       reader.readAsDataURL(file);
@@ -38,7 +38,7 @@ const Step2 = (props) => {
     setPreview((prevState) => {
       return (
         <div className="preview">
-          {imgContener.map((item, index) => {
+          {imgContainer.map((item, index) => {
             return (
               <div className="preview-image" key={index}>
                 <img src={item} />
@@ -48,7 +48,7 @@ const Step2 = (props) => {
         </div>
       );
     });
-  }, [imgContener]);
+  }, [imgContainer]);
 
   useEffect(() => {
     input.current.setAttribute("multiple", true);
@@ -56,7 +56,7 @@ const Step2 = (props) => {
   }, []);
 
   const next = async () => {
-    props.state.formData.img = imgContener;
+    props.state.formData.img = imgContainer;
     history.push("/add/step3");
   };
   return (
