@@ -11,15 +11,15 @@ const Search = (props) => {
   const inputE4 = useRef();
 
   const classCe = () => {
-    inputEl.current.className = "homelog-blok";
-    inputE2.current.className = "homelog-blok";
-    inputE3.current.className = "homelog-blok";
-    inputE4.current.className = "homelog-blok";
+    inputEl.current.className = "homeLogo-blok";
+    inputE2.current.className = "homeLogo-blok";
+    inputE3.current.className = "homeLogo-blok";
+    inputE4.current.className = "homeLogo-blok";
   };
 
   const onButtonClickflat = (ref) => {
     classCe();
-    ref.current.className = "homelog-blok log-blok";
+    ref.current.className = "homeLogo-blok  log-blok";
     props.state.flat();
     setState((prevState) => {
       return [props.state.flat(), 1];
@@ -28,7 +28,7 @@ const Search = (props) => {
   };
   const onButtonClickHome = (ref) => {
     classCe();
-    ref.current.className = "homelog-blok log-blok";
+    ref.current.className = "homeLogo-blok  log-blok";
     props.state.home();
     setState((prevState) => {
       return [props.state.home(), 2];
@@ -37,7 +37,7 @@ const Search = (props) => {
   };
   const onButtonClickshop = (ref) => {
     classCe();
-    ref.current.className = "homelog-blok log-blok";
+    ref.current.className = "homeLogo-blok log-blok";
     props.state.shop();
     setState((prevState) => {
       return [props.state.shop(), 3];
@@ -46,7 +46,7 @@ const Search = (props) => {
   };
   const onButtonClickland = (ref) => {
     classCe();
-    ref.current.className = "homelog-blok log-blok";
+    ref.current.className = "homeLogo-blok log-blok";
     props.state.land();
     setState((prevState) => {
       return [props.state.land(), 4];
@@ -66,7 +66,7 @@ const Search = (props) => {
           <div className="type">
             <div className={props.state.filtClassName[3]}>
               <div
-                className="homelog-blok log-blok"
+                className="homeLogo-blok log-blok"
                 ref={inputE2}
                 onClick={() => {
                   onButtonClickflat(inputE2);
@@ -78,7 +78,7 @@ const Search = (props) => {
                 ></img>
               </div>
               <div
-                className="homelog-blok"
+                className="homeLogo-blok"
                 ref={inputEl}
                 onClick={() => {
                   onButtonClickHome(inputEl);
@@ -90,7 +90,7 @@ const Search = (props) => {
                 ></img>
               </div>
               <div
-                className="homelog-blok"
+                className="homeLogo-blok"
                 ref={inputE3}
                 onClick={() => {
                   onButtonClickshop(inputE3);
@@ -102,7 +102,7 @@ const Search = (props) => {
                 ></img>
               </div>
               <div
-                className="homelog-blok"
+                className="homeLogo-blok"
                 ref={inputE4}
                 onClick={() => {
                   onButtonClickland(inputE4);

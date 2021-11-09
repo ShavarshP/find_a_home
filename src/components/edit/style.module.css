@@ -1,0 +1,13 @@
+.editBlok {
+  position: fixed;
+  top: -1px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: black;
+  opacity: 0.4;
+}
+.edit_child {
+  width: 600px;
+  height: 800px;
+}

@@ -8,6 +8,7 @@ import Block from "./ControlBlock/block";
 import Loading from "../../../components/loading/loading";
 import { useHttp } from "../../../myHooks/http";
 import { loadState } from "../../../helpers/localStorage";
+import Edit from "../../../components/edit/edit";
 
 const Home = (props) => {
   // const [state, setState] = useState(props.state);
@@ -30,27 +31,21 @@ const Home = (props) => {
   };
   const deleteData = async () => {
     try {
-      const URL = `https://still-reef-22878.herokuapp.com/api/delete/${id}`
+      const URL = `https://still-reef-22878.herokuapp.com/api/delete/${id}`;
       const token = await loadState("auth");
-      const data = await request(
-        URL,
-        "DELETE",
-        null,
-        {
-          Authorization: `Bearer ${token.token}`,
-        }
-      );
+      const data = await request(URL, "DELETE", null, {
+        Authorization: `Bearer ${token.token}`,
+      });
       history.push("/home");
-    } catch (error) { }
-  }
+    } catch (error) {}
+  };
 
   const check = () => {
-    const promptId = prompt()
+    const promptId = prompt();
     if (promptId === id) {
-      deleteData()
+      deleteData();
     }
-  }
-
+  };
 
   useEffect(() => {
     getData();
@@ -64,6 +59,7 @@ const Home = (props) => {
           <Slide img={myData.img} />
           <Content state={myData} check={check} />
           <Block />
+          <Edit />
         </div>
       ) : (
         <Loading />
