@@ -13,6 +13,7 @@ import Edit from "../../../components/edit/edit";
 const Home = (props) => {
   // const [state, setState] = useState(props.state);
   const [myData, setData] = useState(null);
+  const [condition, setCondition] = useState(false);
   const history = useHistory();
   // const [isLoaded, setIsLoaded] = useState(false);
   const { id } = useParams();
@@ -40,6 +41,10 @@ const Home = (props) => {
     } catch (error) {}
   };
 
+  const changeCondition = () => {
+    setCondition(!condition);
+  };
+
   const check = () => {
     const promptId = prompt();
     if (promptId === id) {
@@ -57,9 +62,15 @@ const Home = (props) => {
         <div>
           <div className="content-home"></div>
           <Slide img={myData.img} />
-          <Content state={myData} check={check} />
+          <Content
+            state={myData}
+            check={check}
+            changeCondition={changeCondition}
+          />
           <Block />
-          <Edit />
+          {condition ? (
+            <Edit data={myData} changeCondition={changeCondition} />
+          ) : null}
         </div>
       ) : (
         <Loading />

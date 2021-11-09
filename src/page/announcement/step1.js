@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import PhoneInput from 'react-phone-number-input'
+import PhoneInput from "react-phone-number-input";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 const Step1 = (props) => {
-  const [value, setValue] = useState()
+  const [value, setValue] = useState();
   const [state, setState] = useState(props.state.formData);
   let history = useHistory();
   const {
@@ -161,7 +161,8 @@ const Step1 = (props) => {
         <PhoneInput
           value={state.Mobile_number}
           {...register("Mobile_number")}
-          onChange={setValue} />
+          onChange={setValue}
+        />
 
         {/* <input
           type="tel"

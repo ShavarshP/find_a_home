@@ -39,8 +39,16 @@ const Content = (props) => {
         </span>
       </div>
       {/* <Block /> */}
-      {loadState("auth") ? <> <button onClick={props.check}><Delete /> </button><button>edit</button></> : null}
-    </div >
+      {loadState("auth") ? (
+        <>
+          {" "}
+          <button onClick={props.check}>
+            <Delete />{" "}
+          </button>
+          <button onClick={props.changeCondition}>edit</button>
+        </>
+      ) : null}
+    </div>
   );
 };
 
