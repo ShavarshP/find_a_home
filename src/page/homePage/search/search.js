@@ -17,14 +17,14 @@ const Search = (props) => {
     inputE4.current.className = "homeLogo-blok";
   };
 
-  const onButtonClickflat = (ref) => {
+  const onButtonClickFlat = (ref) => {
     classCe();
     ref.current.className = "homeLogo-blok  log-blok";
     props.state.flat();
     setState((prevState) => {
       return [props.state.flat(), 1];
     });
-    props.state.clineFilter()
+    props.state.clineFilter();
   };
   const onButtonClickHome = (ref) => {
     classCe();
@@ -33,16 +33,16 @@ const Search = (props) => {
     setState((prevState) => {
       return [props.state.home(), 2];
     });
-    props.state.clineFilter()
+    props.state.clineFilter();
   };
-  const onButtonClickshop = (ref) => {
+  const onButtonClickShop = (ref) => {
     classCe();
     ref.current.className = "homeLogo-blok log-blok";
     props.state.shop();
     setState((prevState) => {
       return [props.state.shop(), 3];
     });
-    props.state.clineFilter()
+    props.state.clineFilter();
   };
   const onButtonClickland = (ref) => {
     classCe();
@@ -51,12 +51,11 @@ const Search = (props) => {
     setState((prevState) => {
       return [props.state.land(), 4];
     });
-    props.state.clineFilter()
-
+    props.state.clineFilter();
   };
   const Filter = useMemo(() => {
-    return <Flat state={state[0]} getdata={props.getdata} />
-  }, [props.state.filt])
+    return <Flat state={state[0]} getdata={props.getdata} />;
+  }, [props.state.filt]);
   return (
     <header className={props.state.filtClassName[4]}>
       <div className={props.state.filtClassName[2]}>
@@ -69,7 +68,7 @@ const Search = (props) => {
                 className="homeLogo-blok log-blok"
                 ref={inputE2}
                 onClick={() => {
-                  onButtonClickflat(inputE2);
+                  onButtonClickFlat(inputE2);
                 }}
               >
                 <img
@@ -93,7 +92,7 @@ const Search = (props) => {
                 className="homeLogo-blok"
                 ref={inputE3}
                 onClick={() => {
-                  onButtonClickshop(inputE3);
+                  onButtonClickShop(inputE3);
                 }}
               >
                 <img

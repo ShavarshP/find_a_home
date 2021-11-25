@@ -16,9 +16,9 @@
   padding-right: 20px;
   list-style: none;
 }
-.flex-container2 {
+/* .flex-container2 {
   padding-top: 20px;
-}
+} */
 .nameRadio-buttom {
   margin-left: 10px;
 
@@ -37,7 +37,7 @@
   width: 150px;
   margin-top: 20px;
   margin-right: 20px;
-  margin-left: 20px
+  margin-left: 20px;
 }
 
 .margin-box {
