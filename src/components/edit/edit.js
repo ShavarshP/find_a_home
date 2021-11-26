@@ -12,7 +12,7 @@ const Edit = ({ data, changeCondition }) => {
   } = useForm();
 
   const onSubmit = (data) => {
-    // props.state.changedata(data);
+    // props.state.changeData(data);
     // history.push("/add/step2");
     console.log(data);
   };

@@ -4,9 +4,9 @@ import { useHistory } from "react-router-dom";
 const Step2 = (props) => {
   let history = useHistory();
   let files = [];
-  let myimges = [];
+  let myImgs = [];
   const [preview, setPreview] = useState(<div className="preview"></div>);
-  let [imgContainer, setimgContainer] = useState([]);
+  let [imgContainer, setImgContainer] = useState([]);
   const input = useRef();
   const triggerInput = () => input.current.click();
   const accept = [".png", ".jpg", ".jpeg", ".gif"];
@@ -25,9 +25,9 @@ const Step2 = (props) => {
       const reader = new FileReader();
       reader.onload = (ev) => {
         const src = ev.target.result;
-        myimges = [...myimges, src];
+        myImgs = [...myImgs, src];
         if (index == files.length - 1) {
-          setimgContainer([...imgContainer, ...myimges]);
+          setImgContainer([...imgContainer, ...myImgs]);
         }
       };
       reader.readAsDataURL(file);

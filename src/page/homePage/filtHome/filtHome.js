@@ -17,9 +17,9 @@ const FiltPage = (props) => {
   const { request } = useHttp();
   const { id } = useParams();
 
-  props.state.openFiltPage();
+  props.state.openFilterPage();
 
-  const getdata = async () => {
+  const getData = async () => {
     setData(null);
     try {
       const data = await request(
@@ -31,14 +31,14 @@ const FiltPage = (props) => {
         }
       );
       setData(data);
-    } catch (e) { }
+    } catch (e) {}
   };
 
   useEffect(() => {
     setState((prevState) => {
       return props.state;
     });
-    getdata();
+    getData();
   }, []);
 
   return (
@@ -47,7 +47,7 @@ const FiltPage = (props) => {
       {myData ? (
         <div>
           <div className="home home-filterHome">
-            <Search state={state} getdata={getdata} filterPage={true} />
+            <Search state={state} getData={getData} filterPage={true} />
             <div className="filter-list">
               <List state={state} data={myData.candidate} />
               <Next data={myData.count} />

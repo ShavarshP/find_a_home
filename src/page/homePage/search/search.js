@@ -44,7 +44,7 @@ const Search = (props) => {
     });
     props.state.clineFilter();
   };
-  const onButtonClickland = (ref) => {
+  const onButtonClickLand = (ref) => {
     classCe();
     ref.current.className = "homeLogo-blok log-blok";
     props.state.land();
@@ -54,16 +54,16 @@ const Search = (props) => {
     props.state.clineFilter();
   };
   const Filter = useMemo(() => {
-    return <Flat state={state[0]} getdata={props.getdata} />;
+    return <Flat state={state[0]} getData={props.getData} />;
   }, [props.state.filt]);
   return (
-    <header className={props.state.filtClassName[4]}>
-      <div className={props.state.filtClassName[2]}>
+    <header className={props.state.filterClassName[4]}>
+      <div className={props.state.filterClassName[2]}>
         {props.filterPage ? (
           <div></div>
         ) : (
           <div className="type">
-            <div className={props.state.filtClassName[3]}>
+            <div className={props.state.filterClassName[3]}>
               <div
                 className="homeLogo-blok log-blok"
                 ref={inputE2}
@@ -104,7 +104,7 @@ const Search = (props) => {
                 className="homeLogo-blok"
                 ref={inputE4}
                 onClick={() => {
-                  onButtonClickland(inputE4);
+                  onButtonClickLand(inputE4);
                 }}
               >
                 <img

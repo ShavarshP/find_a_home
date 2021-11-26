@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./home.css";
-import Manue from "./manue/manu";
+import Menu from "./menu/menu";
 import Search from "./search/search";
 import List from "./list/list";
 import Footer from "./footer/footer";
@@ -35,7 +35,7 @@ const Home = (props) => {
 
   return (
     <div className="home">
-      <Manue />
+      <Menu />
       <Search state={props.state} />
       <h2 className="home__title">New announcements</h2>
       <hr style={{ border: "1px solid #676662" }} />

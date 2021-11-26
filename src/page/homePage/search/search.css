@@ -24,7 +24,7 @@
   margin-top: 1%;
   margin-bottom: 1%;
   background-color: #eae2b6;
-  -webkit-transition: 0.55s all ease;
+  /* -webkit-transition: 0.55s all ease; */
 }
 
 .flex-container {

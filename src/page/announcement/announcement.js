@@ -16,7 +16,7 @@ const Announcement = (props) => {
     // setState((prevState) => {
     //   return props.state;
     // });
-  }, [props.state.filtClassName]);
+  }, [props.state.filterClassName]);
 
   switch (id) {
     case "step1":

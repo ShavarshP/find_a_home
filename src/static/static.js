@@ -17,7 +17,7 @@ const filterData = {
   sale: false,
   search_code: "",
   street: "",
-}
+};
 
 const state = {
   countOfPage: 0,
@@ -39,14 +39,14 @@ const state = {
     search_code: "",
     loc: "",
   },
-  changedata(data) {
+  changeData(data) {
     this.formData = data;
     return this.formData;
   },
   rooms: "inline",
   floor: "flex",
-  typrBild: "inline",
-  filtClassName: [
+  typeBield: "inline",
+  filterClassName: [
     "filter-container filterHome-filter-container",
     "list-filter-container",
     "searchBlok",
@@ -54,8 +54,8 @@ const state = {
     "home-header3",
     "home14-0",
   ],
-  openFiltPage() {
-    this.filtClassName = [
+  openFilterPage() {
+    this.filterClassName = [
       "filter-container2 filterHome-filter-container",
       "list-filter-container2",
       "searchBlok2",
@@ -65,7 +65,7 @@ const state = {
     ];
   },
   openHomePage() {
-    this.filtClassName = [
+    this.filterClassName = [
       "filter-container filterHome-filter-container",
       "list-filter-container",
       "searchBlok",
@@ -77,28 +77,28 @@ const state = {
   home() {
     this.rooms = "inline";
     this.floor = "none";
-    this.typrBild = "inline";
+    this.typeBield = "inline";
     this.filt.search = "home";
     return this;
   },
   shop() {
     this.rooms = "none";
     this.floor = "none";
-    this.typrBild = "none";
+    this.typeBield = "none";
     this.filt.search = "shop";
     return this;
   },
   land() {
     this.rooms = "none";
     this.floor = "none";
-    this.typrBild = "none";
+    this.typeBield = "none";
     this.filt.search = "land";
     return this;
   },
   flat() {
     this.rooms = "inline";
     this.floor = "flex";
-    this.typrBild = "inline";
+    this.typeBield = "inline";
     this.filt.search = "flat";
     return this;
   },
@@ -118,8 +118,8 @@ const state = {
       sale: false,
       search_code: "",
       street: "",
-    }
-  }
+    };
+  },
 };
 // localStorage.setItem('filt', state.filt)
 // (localStorage.getItem('filt'))?state.filt=localStorage.getItem('filt') :localStorage.setItem('filt', state.filt)

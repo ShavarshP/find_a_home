@@ -1,15 +1,15 @@
 import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
-import "./manue.css";
+import "./menu.css";
 
-const Manue = () => {
-  const manueHome = useRef();
-  const manueAbout = useRef();
-  const manueContact = useRef();
+const Menu = () => {
+  const menuHome = useRef();
+  const menuAbout = useRef();
+  const menuContact = useRef();
   const changeClassName = (item) => {
-    manueHome.current.className = "navItems";
-    manueAbout.current.className = "navItems";
-    manueContact.current.className = "navItems";
+    menuHome.current.className = "navItems";
+    menuAbout.current.className = "navItems";
+    menuContact.current.className = "navItems";
     item.current.className = "navItems navItemActive";
   };
   return (
@@ -26,23 +26,23 @@ const Manue = () => {
               to={"/home"}
               className="navItems navItemActive"
               href="#home"
-              ref={manueHome}
-              onClick={() => changeClassName(manueHome)}
+              ref={menuHome}
+              onClick={() => changeClassName(menuHome)}
             >
               <span>Home</span>
             </NavLink>
             <NavLink
               to={"/about"}
               className="navItems"
-              ref={manueAbout}
-              onClick={() => changeClassName(manueAbout)}
+              ref={menuAbout}
+              onClick={() => changeClassName(menuAbout)}
             >
               <span>About</span>
             </NavLink>
             <a
               className="navItems"
-              ref={manueContact}
-              onClick={() => changeClassName(manueContact)}
+              ref={menuContact}
+              onClick={() => changeClassName(menuContact)}
             >
               <span>Contact</span>
             </a>
@@ -56,4 +56,4 @@ const Manue = () => {
   );
 };
 
-export default Manue;
+export default Menu;

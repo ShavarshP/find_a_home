@@ -11,18 +11,18 @@ const Flat = (props) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = () => {
     history.push("/filtPage/1");
-    if (props.getdata) {
-      props.getdata();
+    if (props.getData) {
+      props.getData();
     }
   };
 
   const search = (data) => {
+    data={...data,...status}
     props.state.filt = data;
     setState(data);
   };
@@ -31,7 +31,7 @@ const Flat = (props) => {
   }, [Object.values(props.state.filt)]);
 
   return (
-    <div className={props.state.filtClassName[0]}>
+    <div className={props.state.filterClassName[0]}>
       <div className="flex-container2" style={{ display: "flex" }}>
         <div style={{ marginTop: "16px" }}></div>
         <label htmlFor="female" className="nameRadio-buttom">
