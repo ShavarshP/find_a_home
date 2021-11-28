@@ -19,10 +19,8 @@ const Home = (props) => {
       const data = await request(
         "https://still-reef-22878.herokuapp.com/api/houses"
       );
-      // setIsLoaded(true);
       setData(data);
     } catch (e) {
-      // setIsLoaded(true);
     }
   };
 
