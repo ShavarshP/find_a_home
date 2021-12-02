@@ -10,14 +10,6 @@ const Announcement = (props) => {
   const { id } = useParams();
   let page = <Step1 state={props.state} />;
 
-  // const [state, setState] = useState(props.state);
-
-  useEffect(() => {
-    // setState((prevState) => {
-    //   return props.state;
-    // });
-  }, [props.state.filterClassName]);
-
   switch (id) {
     case "step1":
       page = <Step1 state={props.state} />;

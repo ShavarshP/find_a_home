@@ -21,7 +21,7 @@ const Search = (props) => {
     classCe();
     ref.current.className = "homeLogo-blok  log-blok";
     props.state.flat();
-    setState((prevState) => {
+    setState(() => {
       return [props.state.flat(), 1];
     });
     props.state.clineFilter();
@@ -30,7 +30,7 @@ const Search = (props) => {
     classCe();
     ref.current.className = "homeLogo-blok  log-blok";
     props.state.home();
-    setState((prevState) => {
+    setState(() => {
       return [props.state.home(), 2];
     });
     props.state.clineFilter();
@@ -39,7 +39,7 @@ const Search = (props) => {
     classCe();
     ref.current.className = "homeLogo-blok log-blok";
     props.state.shop();
-    setState((prevState) => {
+    setState(() => {
       return [props.state.shop(), 3];
     });
     props.state.clineFilter();
@@ -48,7 +48,7 @@ const Search = (props) => {
     classCe();
     ref.current.className = "homeLogo-blok log-blok";
     props.state.land();
-    setState((prevState) => {
+    setState(() => {
       return [props.state.land(), 4];
     });
     props.state.clineFilter();

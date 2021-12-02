@@ -10,7 +10,6 @@ import MiniLoading from "../../components/loading/miniLoading";
 const Home = (props) => {
   const [state, setState] = useState(props.state);
   const [myData, setData] = useState(null);
-  // const [isLoaded, setIsLoaded] = useState(false);
   const { request } = useHttp();
   props.state.openHomePage();
 
@@ -20,8 +19,7 @@ const Home = (props) => {
         "https://still-reef-22878.herokuapp.com/api/houses"
       );
       setData(data);
-    } catch (e) {
-    }
+    } catch (e) {}
   };
 
   useEffect(() => {

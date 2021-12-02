@@ -6,7 +6,7 @@ const ListBlok = (props) => {
   return (
     <div className="product-item">
       <div className="product-img">
-        <NavLink to={"/myhome/" + props.state._id}>
+        <NavLink to={"/my-home/" + props.state._id}>
           <img src={props.state.img[0]} />
         </NavLink>
       </div>
@@ -16,19 +16,19 @@ const ListBlok = (props) => {
         <span className="price">$ {props.state.price}</span>
         <div className="actions">
           <div className="add-to-cart">
-            <NavLink to={"/myhome/" + props.state._id} className="cart-button">
+            <NavLink to={"/my-home/" + props.state._id} className="cart-button">
               {props.state.area}.sq m
             </NavLink>
           </div>
           <div className="add-to-links">
-            <NavLink to={"/myhome/" + props.state._id} className="cart-button">
+            <NavLink to={"/my-home/" + props.state._id} className="cart-button">
               {props.state.rooms}.room
             </NavLink>
             <NavLink
-              to={"/myhome/" + props.state._id}
+              to={"/my-home/" + props.state._id}
               className="compare"
             ></NavLink>
-            <NavLink to={"/myhome/" + props.state._id} className="cart-button">
+            <NavLink to={"/my-home/" + props.state._id} className="cart-button">
               {props.state.flor}
             </NavLink>
           </div>

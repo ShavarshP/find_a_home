@@ -18,7 +18,7 @@ export const useRoutes = (props) => {
       <Route path="/add/:id">
         <Announcement state={props.state} />
       </Route>
-      <Route path="/myhome/:id">
+      <Route path="/my-home/:id">
         <Menu />
         <HomePage />
       </Route>
